@@ -1,0 +1,69 @@
+{{!< default}}
+{{#post}}
+<main class="container" role="main">
+  <article class="{{post_class}}" style="margin-top: 90px;">
+    <header class="single-post-header">
+      <h3 class="post-title">{{title}}</h3>
+      </section>
+    </header>
+    <section class="post-content">
+      {{content}}
+    </section>
+    <footer class="post-footer">
+      {{#author}}{{! http://themes.ghost.org/docs/author }}
+        <div class="panel panel-success">
+          <div class="panel-heading">文档相关信息</div>
+          <div class="panel-body">
+            <table class="table" style="margin-bottom: 5px;">
+              <tbody>
+                <tr>
+                  <th scope="row">作者</th>
+                  <td>
+                    <img class="author-thumb rotate-anime" src="{{image}}" alt="{{name}}" nopin="nopin"><a class="label label-success" href="{{url}}">{{name}}</a> <span class="label label-default">in {{location}}</span><p style="margin-bottom: 0;"><small><i>"{{bio}}"</i></small></p>{{/author}}
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">时间</th>
+                  <td>发布于 <time datetime="{{date format='YYYY-MM-DD'}}">{{date format="YYYY-MM-DD"}}</time>, 某些时效性内容在您阅读时可能已经不再适用, 望悉知</td>
+                </tr>
+                <tr>
+                  <th scope="row">节点</th>
+                  <td>{{#foreach tags}}&nbsp;<a href="{{url}}" title="{{name}}" class="label label-info">{{name}}</a>{{/foreach}}</td>
+                </tr>
+                <tr>
+                  <th scope="row">链接</th>
+                  <td><a href="{{url}}">{{title}}</a></td>
+                </tr>
+                <tr>
+                  <th scope="row">许可</th>
+                  <td>署名-非商业性使用-禁止演绎 ( <a href="http://creativecommons.org/licenses/by-nc-nd/3.0/deed.zh" target="_blank">CC BY-NC-ND</a> )</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+    </footer>
+  </article>
+</main>
+<aside class="container article-bottom">
+  <div class="row">
+    <div class="col-sm-6"><span>下一篇:</span>{{#next_post}}<a class="read-next-story" href="{{url}}"><h4>{{title}}</h4></a>{{/next_post}}</div>
+    <div class="col-sm-6"><span>上一篇:</span>{{#prev_post}}<a class="read-next-story" href="{{url}}"><h4>{{title}}</h4></a>{{/prev_post}}</div>
+  </div>
+</aside>
+<!-- 多说评论框 start -->
+<div class="ds-thread container" data-thread-key="{{url}}" data-title="{{title}}" data-url="{{url absolute="true"}}"></div>
+<!-- 多说评论框 end -->
+<!-- 多说公共 JS 代码 start -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"hfun"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script>
+<!-- 多说公共 JS 代码 end -->
+{{/post}}

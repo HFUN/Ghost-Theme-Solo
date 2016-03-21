@@ -1,0 +1,9 @@
+{{!< default}}
+{{! The tag above means - insert everything in this file into the {body} of the default.hbs template }}
+{{! The main content area on the homepage }}
+<div class="main-wrapper">
+<main id="content" class="container" role="main">
+  {{ghost_head}}{{! Ghost outputs important style and meta data with this tag }}
+  {{> "loop"}}{{! The tag includes the post loop - partials/loop.hbs }}
+</main>
+</div>

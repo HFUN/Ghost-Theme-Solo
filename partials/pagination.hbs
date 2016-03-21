@@ -1,0 +1,9 @@
+<nav class="solo-pagination" role="navigation">
+  {{#if prev}}
+    <a class="newer-posts pull-left" href="{{page_url prev}}">前一页</a>
+  {{/if}}
+  <span class="page-number">第 {{page}} 页, 共 {{pages}} 页</span>
+  {{#if next}}
+  	<a class="older-posts pull-right" href="{{page_url next}}">下一页</a>
+  {{/if}}
+</nav>

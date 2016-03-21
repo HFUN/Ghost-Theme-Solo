@@ -1,0 +1,22 @@
+{{!< default}}
+{{! This is a page template. A page outputs content just like any other post, and has all the same
+    attributes by default, but you can also customise it to behave differently if you prefer. }}
+{{! Everything inside the #post tags pulls data from the page }}
+{{#post}}
+<main class="container" role="main">
+  <article class="{{post_class}}" style="margin-top: 90px; border-bottom: 1px dashed #C5C5C5;">
+    <header class="post-header">
+      <h2 class="post-title">{{title}}</h2>
+    </header>
+    <section class="post-content">
+      {{content}}
+    </section>
+    <footer class="post-footer">
+      <ol class="breadcrumb">
+  		<li><time datetime="{{date published_at format='YYYY-MM-DD'}}">本页面发布于 {{date published_at format="YYYY-MM-DD"}}</time></li>
+  		<li><time datetime="{{date updated_at format='YYYY-MM-DD'}}">最后一次更新于 {{date updated_at format="YYYY-MM-DD"}}</time></li>
+	  </ol>
+    </footer>
+  </article>
+</main>
+{{/post}}
